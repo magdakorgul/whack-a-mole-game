@@ -36,9 +36,8 @@ class Obstacle{
     constructor(){
         this.width = 10;
         this.height = 10;
-        this.positionX = 50 - this.width/2;
-        this.positionY = 80;
-        
+        this.positionX = Math.floor(Math.random() * (100 - this.width + 1));
+        this.positionY = 100;
         this.obstacleElement = null;
 
         this.createDomElement();

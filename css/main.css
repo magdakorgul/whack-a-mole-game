@@ -2,6 +2,7 @@ body {
   background-color: rgb(255, 109, 136);
   margin: 0;
   padding: 0;
+  text-align: center;
 }
 
 #board {
