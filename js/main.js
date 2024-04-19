@@ -16,13 +16,17 @@ class Player{
     }
 
 moveLeft(){
+    if(this.positionX > 0){
     this.positionX--;
     this.playerElm.style.left = this.positionX + "vw";
+    }
 
 }
 moveRight(){
+    if(this.positionX < 100 - this.width){
     this.positionX++; // or: this.position += 1
     this.playerElm.style.left = this.positionX + "vw";
+    }
 }
 }
 
@@ -65,16 +69,25 @@ const obstaclesArr = [];
 setInterval(() => {
     const newObstacle = new Obstacle();
     obstaclesArr.push(newObstacle);
-    console.log("create new")
-}, 2000);
+}, 3000);
 
 
 //move obstacle
 setInterval(() => {
     obstaclesArr.forEach((obstacleInstance) => {
         obstacleInstance.moveDown();
+
+        if(
+            player.positionX < obstacleInstance.positionX + obstacleInstance.width &&
+            player.positionX + player.width > obstacleInstance.positionX &&
+            player.positionY < obstacleInstance.positionY + obstacleInstance.height &&
+            player.positionY + player.height > obstacleInstance.positionY
+        ){
+            console.log("game over");
+            location.href = "gameover.html";
+        }
     });
-}, 40);
+}, 80);
 
 document.addEventListener("keydown", (e) => {
    if (e.code === "ArrowLeft"){;
