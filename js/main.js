@@ -61,11 +61,25 @@ function generateRandom(){
     squares[randomIndex].classList.add("chosenSquare");
 
     console.log(squares[randomIndex]);
+
 }
+    
+ function generateTime()
+ {
+    this.timeoutId = 10000;
+    const timer = setInterval(generateRandom, 3000);
+    const timeoutId = setInterval(generateRandom, 3000);
+        return setInterval;
+ }
+generateTime();
 
-// let randomIndex = Math.floor(Math.random() * 9);
-//   let randomSquare = document.querySelectorAll(".square")[randomIndex];
+let timerId = setTimeout(() => {
+    console.log("stop");
+}, 10000);
 
-//   randomSquare.innerHTML = Math.floor(Math.random() * 9); 
-//   console.log(randomSquare);
-// } 
+clearTimeout(timerId);
+
+// function cancel(){
+//         clearTimeout(this.timeoutId);
+//     }
+// cancel();
