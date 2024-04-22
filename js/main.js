@@ -50,10 +50,22 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 function generateRandom(){
+    let squares = document.querySelectorAll(".square");
+    let chosenSquare = document.querySelector(".chosenSquare");
 
-let randomIndex = Math.floor(Math.random() * 9);
-  let randomSquare = document.querySelectorAll(".square")[randomIndex];
+    if (chosenSquare) {
+        chosenSquare.classList.remove("chosenSquare");
+    }
 
-  randomSquare.innerHTML = Math.floor(Math.random() * 9); 
-  console.log(randomSquare);
-} 
+    let randomIndex = Math.floor(Math.random() * squares.length);
+    squares[randomIndex].classList.add("chosenSquare");
+
+    console.log(squares[randomIndex]);
+}
+
+// let randomIndex = Math.floor(Math.random() * 9);
+//   let randomSquare = document.querySelectorAll(".square")[randomIndex];
+
+//   randomSquare.innerHTML = Math.floor(Math.random() * 9); 
+//   console.log(randomSquare);
+// } 

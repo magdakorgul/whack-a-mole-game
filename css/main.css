@@ -30,6 +30,6 @@ body {
   width: 60px;
   max-height: 100%;
 } */
-.square .rat {
+.chosenSquare {
   background-color: rgb(255, 255, 118);
 }
