@@ -26,20 +26,34 @@ class Square{
 
         this.squareElement = document.querySelectorAll(".square");
 
-        for (let i=0; i<this.squareElement.length; i++){
-            let element = this.squareElement[i];
-        element.style.width = this.width + "vw";
-        element.style.height = this.height + "vh";
-        element.style.bottom = this.positionY + "vh";
-        element.style.left = this.positionX + "vw";
+        // for (let i=0; i<this.squareElement.length; i++){
+        //     let element = this.squareElement[i];
+        // element.style.width = this.width + "vw";
+        // element.style.height = this.height + "vh";
+        // element.style.bottom = this.positionY + "vh";
+        // element.style.left = this.positionX + "vw";
 
-        let image = document.querySelector(".rat");
-        image.style.width = "80px";
-        image.style.maxHeight = "100%";
-        image.style.position = "relative";
+        // let image = document.querySelector(".rat");
+        // image.style.width = "80px";
+        // image.style.maxHeight = "100%";
+        // image.style.position = "relative";
 
-         element.appendChild(image);
+        //  element.appendChild(image);
     };
 }
-}
+
 const houses = new Square();
+
+//generate a random integer number
+document.addEventListener("DOMContentLoaded", function() {
+  generateRandom();
+});
+
+function generateRandom(){
+
+let randomIndex = Math.floor(Math.random() * 9);
+  let randomSquare = document.querySelectorAll(".square")[randomIndex];
+
+  randomSquare.innerHTML = Math.floor(Math.random() * 9); 
+  console.log(randomSquare);
+} 

@@ -25,8 +25,11 @@ body {
   margin: 5px;
   padding: 5px;
 }
-img {
+/* img {
   grid-area: image1;
   width: 60px;
   max-height: 100%;
+} */
+.square .rat {
+  background-color: rgb(255, 255, 118);
 }
