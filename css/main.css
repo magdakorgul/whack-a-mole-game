@@ -1,5 +1,4 @@
 body {
-  background-color: rgb(255, 109, 136);
   margin: 0;
   padding: 0;
   text-align: center;
@@ -8,16 +7,26 @@ body {
 #board {
   width: 100vw;
   height: 100vh;
-  background-color: rgb(255, 195, 235);
+  background-color: rgb(184, 255, 196);
   position: relative;
   overflow: hidden;
 }
-
-#player {
-  position: absolute;
-  background-color: rgba(39, 58, 7, 0.917);
+#board-game {
+  display: grid;
+  background-color: rgb(255, 255, 255);
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-areas:
+    "image1 image1 image1"
+    "image1 image1 image1"
+    "image1 image1 image1";
 }
-.obstacle {
-  background-color: rgb(88, 0, 0);
-  position: absolute;
+.square {
+  background-color: rgb(203, 168, 255);
+  margin: 5px;
+  padding: 5px;
+}
+img {
+  grid-area: image1;
+  width: 60px;
+  max-height: 100%;
 }
