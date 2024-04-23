@@ -1,100 +1,129 @@
+class Board {
+  constructor() {
+    this.width = 70;
+    this.height = 70;
+    this.positionX = 50;
+    this.positionY = 20;
 
-
-class Board{
-    constructor(){
-        this.width = 70;
-        this.height = 70;
-        this.positionX = 50;
-        this.positionY = 20;
-
-        this.square = document.querySelector("#board-game");
-        this.square.style.width = this.width + "vw";
-        this.square.style.height = this.height + "vh";
-        this.square.style.bottom = this.positionY + "vh";
-        this.square.style.left = this.positionX + "vw";
-        
-    }
+    this.square = document.querySelector("#board-game");
+    this.square.style.width = this.width + "vw";
+    this.square.style.height = this.height + "vh";
+    this.square.style.bottom = this.positionY + "vh";
+    this.square.style.left = this.positionX + "vw";
+  }
 }
 const boardGame = new Board();
 
-class Square{
-    constructor(){
-        this.width = 17;
-        this.height = 17;
-        this.positionX = 50;
-        this.positionY = 20;
+class Square {
+  constructor() {
+    this.width = 17;
+    this.height = 17;
+    this.positionX = 50;
+    this.positionY = 20;
 
-        this.squareElement = document.querySelectorAll(".square");
+    this.squareElement = document.querySelectorAll(".square");
 
-        // for (let i=0; i<this.squareElement.length; i++){
-        //     let element = this.squareElement[i];
-        // element.style.width = this.width + "vw";
-        // element.style.height = this.height + "vh";
-        // element.style.bottom = this.positionY + "vh";
-        // element.style.left = this.positionX + "vw";
+    // for (let i=0; i<this.squareElement.length; i++){
+    //     let element = this.squareElement[i];
+    // element.style.width = this.width + "vw";
+    // element.style.height = this.height + "vh";
+    // element.style.bottom = this.positionY + "vh";
+    // element.style.left = this.positionX + "vw";
 
-        // let image = document.querySelector(".rat");
-        // image.style.width = "80px";
-        // image.style.maxHeight = "100%";
-        // image.style.position = "relative";
+    // let image = document.querySelector(".rat");
+    // image.style.width = "80px";
+    // image.style.maxHeight = "100%";
+    // image.style.position = "relative";
 
-        //  element.appendChild(image);
-    };
+    //  element.appendChild(image);
+  }
 }
 
 const houses = new Square();
 
 //generate a random integer number
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
   generateRandom();
 });
 
-function generateRandom(){
-    let squares = document.querySelectorAll(".square");
-    let chosenSquare = document.querySelector(".chosenSquare");
+function generateRandom() {
+  let squares = document.querySelectorAll(".square");
+  let chosenSquare = document.querySelector(".chosenSquare");
 
-    if (chosenSquare) {
-        chosenSquare.classList.remove("chosenSquare");
-    }
+  if (chosenSquare) {
+    chosenSquare.classList.remove("chosenSquare");
+  }
 
-    let randomIndex = Math.floor(Math.random() * squares.length);
-    squares[randomIndex].classList.add("chosenSquare");
+  let randomIndex = Math.floor(Math.random() * squares.length);
+  squares[randomIndex].classList.add("chosenSquare");
 
-    console.log(squares[randomIndex]);
-
+  console.log(squares[randomIndex]);
 }
 //generate a time interval
 
 let timerId;
-    
- function generateTime(){
-    timerId = setInterval(generateRandom, 3000);
- }
- generateTime();
-    
- setTimeout(() => {
-    console.log("stop");
-    clearInterval(timerId);
- }, 10000);
 
+function generateTime() {
+  timerId = setInterval(generateRandom, 3000);
+}
+generateTime();
+
+setTimeout(() => {
+  console.log("stop");
+  clearInterval(timerId);
+}, 40000);
+
+// show the timer
+
+let timerGame;
+let timeRemaining = 40;
+
+function updateTimer() {
+  const minutes = Math.floor(timeRemaining / 40)
+    .toString()
+    .padStart(2, "0");
+  const seconds = (timeRemaining % 40).toString().padStart(2, "0");
+  let timeRemainingElement = document.querySelector(".timeRemaining");
+  timeRemainingElement.innerText = `${minutes}:${seconds}`;
+}
+
+// timer functionality
+function StartTheTimer() {
+  timerGame = setInterval(() => {
+    timeRemaining--;
+    updateTimer();
+
+    if (timeRemaining <= 0) {
+      console.log("game over...");
+      clearInterval(timerGame);
+      location.href = "gameover.html";
+    }
+  }, 1000);
+}
+StartTheTimer();
 
 //controling the hammer
-// (function() {
+// (function() {}
 //     document.onmousemove = handleMouseMove;
 //     function trackMouseMovement(event){
 //     const hammer = document.getElementById("#hammer");
-document.addEventListener("DOMContentLoaded", function() {   
-let allSquares = document.querySelectorAll(".square");
+document.addEventListener("DOMContentLoaded", function () {
+  let allSquares = document.querySelectorAll(".square");
 
-function changeColor(event){
+  function changeColor(event) {
     console.log(event);
     event.target.classList.remove("chosenSquare");
-} 
-allSquares.forEach(square => {
-square.addEventListener("click", changeColor);
-});
+  }
+  allSquares.forEach((square) => {
+    square.addEventListener("click", changeColor);
+  });
 
-})
+  // function addPoints(){
+  //     if (changeColor === true){
+  //         updateScoreDisplay();
+  //     }
+  // } return addPoints();
+});
 
 //     document.addEventListener("mousemove", (event) => {
 //         const xPosition = event.clientX;
@@ -112,44 +141,39 @@ square.addEventListener("click", changeColor);
 //     }
 // }
 
+function addHammerClick() {
+  const hammer = document.getElementById("#hammer");
 
-function addHammerClick(){
-    const hammer = document.getElementById("#hammer");
-
-    hammer.addEventListener("click", () => {
-        console.log("Hammer clicked");
-     hitMole();
-
-});
+  hammer.addEventListener("click", () => {
+    console.log("Hammer clicked");
+    hitMole();
+  });
 }
-
-
 
 // scores
 
 let score = 0;
-function initializeScore(){
-    score = 0;
-    updateScoreDisplay();
+function initializeScore() {
+  score = 0;
+  updateScoreDisplay();
 }
 
-function updateScore(points){
-    score += points;
-    updateScoreDisplay();
+function updateScore(points) {
+  score += points;
+  updateScoreDisplay();
 }
 
-function updateScoreDisplay(){
-    const scoreElement = document.getElementById("score");
-    scoreElement.textContent = score;
+function updateScoreDisplay() {
+  const scoreElement = document.getElementById("score");
+  scoreElement.textContent = score;
 }
-
 
 function initializeGame() {
-    initializeScore();
-    trackMouseMovement();
-    addHammerClick();
+  initializeScore();
+  trackMouseMovement();
+  addHammerClick();
 
-    document.addEventListener("DOMContentLoaded", function() {
+  document.addEventListener("DOMContentLoaded", function () {
     initializeGame();
-});
+  });
 }

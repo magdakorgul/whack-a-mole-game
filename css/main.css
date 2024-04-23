@@ -40,6 +40,8 @@ body {
 #score {
   font-weight: bold;
 }
+#timeRemaining {
+}
 #hammer {
   width: 50px;
   height: 100px;
