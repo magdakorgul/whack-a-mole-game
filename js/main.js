@@ -63,26 +63,20 @@ function generateRandom(){
     console.log(squares[randomIndex]);
 
 }
+//generate a time interval
+
+let timerId;
     
- function generateTime()
- {
-    
-    const timer = setInterval(generateRandom, 3000);
-        return setInterval;
+ function generateTime(){
+    timerId = setInterval(generateRandom, 3000);
  }
-generateTime();
-
-//to fix:
-let timerId = setTimeout(() => {
+ generateTime();
+    
+ setTimeout(() => {
     console.log("stop");
-}, 10000);
+    clearInterval(timerId);
+ }, 10000);
 
-clearTimeout(timerId);
-
-// function cancel(){
-//         clearTimeout(this.timeoutId);
-//     }
-// cancel();
 
 //controling the hammer
 // (function() {
@@ -108,15 +102,15 @@ square.addEventListener("click", changeColor);
 //     });
 // }
 
-function hitMole(){
-    console.log("Mole hit");
-    const chosenSquare = document.querySelector(".chosenSquare");
+// function hitMole(){
+//     console.log("Mole hit");
+//     const chosenSquare = document.querySelector(".chosenSquare");
 
-    if (chosenSquare){
-        updateScore(1);
-        chosenSquare.classList.remove("chosenSquare");
-    }
-}
+//     if (chosenSquare){
+//         updateScore(1);
+//         chosenSquare.classList.remove("chosenSquare");
+//     }
+// }
 
 
 function addHammerClick(){
