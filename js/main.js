@@ -66,13 +66,13 @@ function generateRandom(){
     
  function generateTime()
  {
-    this.timeoutId = 10000;
+    
     const timer = setInterval(generateRandom, 3000);
-    const timeoutId = setInterval(generateRandom, 3000);
         return setInterval;
  }
 generateTime();
 
+//to fix:
 let timerId = setTimeout(() => {
     console.log("stop");
 }, 10000);
@@ -83,3 +83,79 @@ clearTimeout(timerId);
 //         clearTimeout(this.timeoutId);
 //     }
 // cancel();
+
+//controling the hammer
+// (function() {
+//     document.onmousemove = handleMouseMove;
+//     function trackMouseMovement(event){
+//     const hammer = document.getElementById("#hammer");
+document.addEventListener("DOMContentLoaded", function() {   
+let allSquares = document.querySelectorAll(".square");
+
+function changeColor(event){
+    console.log(event);
+    event.target.classList.remove("chosenSquare");
+} 
+allSquares.forEach(square => {
+square.addEventListener("click", changeColor);
+});
+
+})
+
+//     document.addEventListener("mousemove", (event) => {
+//         const xPosition = event.clientX;
+//         hammer.style.left = xPosition + "px";
+//     });
+// }
+
+function hitMole(){
+    console.log("Mole hit");
+    const chosenSquare = document.querySelector(".chosenSquare");
+
+    if (chosenSquare){
+        updateScore(1);
+        chosenSquare.classList.remove("chosenSquare");
+    }
+}
+
+
+function addHammerClick(){
+    const hammer = document.getElementById("#hammer");
+
+    hammer.addEventListener("click", () => {
+        console.log("Hammer clicked");
+     hitMole();
+
+});
+}
+
+
+
+// scores
+
+let score = 0;
+function initializeScore(){
+    score = 0;
+    updateScoreDisplay();
+}
+
+function updateScore(points){
+    score += points;
+    updateScoreDisplay();
+}
+
+function updateScoreDisplay(){
+    const scoreElement = document.getElementById("score");
+    scoreElement.textContent = score;
+}
+
+
+function initializeGame() {
+    initializeScore();
+    trackMouseMovement();
+    addHammerClick();
+
+    document.addEventListener("DOMContentLoaded", function() {
+    initializeGame();
+});
+}
