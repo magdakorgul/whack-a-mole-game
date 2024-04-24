@@ -41,7 +41,8 @@ class Square {
 
 const houses = new Square();
 
-//generate a random integer number
+// >>>>> generate a random integer number <<<<<< //
+
 document.addEventListener("DOMContentLoaded", function () {
   generateRandom();
 });
@@ -59,7 +60,8 @@ function generateRandom() {
 
   console.log(squares[randomIndex]);
 }
-//generate a time interval
+
+// >>>>> generate a time interval <<<<<< //
 
 let timerId;
 
@@ -73,7 +75,7 @@ setTimeout(() => {
   clearInterval(timerId);
 }, 40000);
 
-// show the timer
+// >>>>>> show the timer <<<<< //
 
 let timerGame;
 let timeRemaining = 40;
@@ -87,7 +89,8 @@ function updateTimer() {
   timeRemainingElement.innerText = `${minutes}:${seconds}`;
 }
 
-// timer functionality
+// >>>>> timer functionality <<<<<< //
+
 function StartTheTimer() {
   timerGame = setInterval(() => {
     timeRemaining--;
@@ -102,10 +105,7 @@ function StartTheTimer() {
 }
 StartTheTimer();
 
-//controling the hammer
-// (function() {}
-//     document.onmousemove = handleMouseMove;
-//     function trackMouseMovement(event){
+// >>>> controling the hammer <<<< //
 
 const hammer = document.getElementById("hammer");
 const onMouseMovement = (e) => {
@@ -124,13 +124,13 @@ document.addEventListener("DOMContentLoaded", function () {
   allSquares.forEach((square) => {
     square.addEventListener("click", changeColor);
   });
-
-  // function addPoints(){
-  //     if (changeColor === true){
-  //         updateScoreDisplay();
-  //     }
-  // } return addPoints();
 });
+
+// function addPoints(){
+//     if (changeColor === true){
+//         updateScoreDisplay();
+//     }
+// } return addPoints();
 
 //     document.addEventListener("mousemove", (event) => {
 //         const xPosition = event.clientX;
@@ -157,7 +157,7 @@ function addHammerClick() {
   });
 }
 
-// scores
+// >>>> counting scores <<<<< //
 
 let score = 0;
 function initializeScore() {

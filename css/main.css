@@ -31,7 +31,12 @@ body {
   max-height: 100%;
 } */
 .chosenSquare {
-  background-color: rgb(255, 255, 118);
+  background-image: url("/hamster.png") !important;
+  background-size: cover;
+  width: 160px;
+  max-height: 100%;
+  border: 1px solid black;
+  object-fit: fill;
 }
 #score-container {
   font-size: 20px;
@@ -44,11 +49,9 @@ body {
 #hammer {
   position: absolute;
   transform: translateX(-50%, -50%);
-
   width: 50px;
   height: 100px;
   background-color: grey;
-  position: absolute;
   bottom: 0;
 }
 .red-color {
