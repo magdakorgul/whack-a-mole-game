@@ -45,6 +45,7 @@ const houses = new Square();
 
 document.addEventListener("DOMContentLoaded", function () {
   generateRandom();
+  initializeGame();
 });
 
 function generateRandom() {
@@ -114,17 +115,17 @@ const onMouseMovement = (e) => {
 };
 document.addEventListener("mousemove", onMouseMovement);
 
-document.addEventListener("DOMContentLoaded", function () {
-  let allSquares = document.querySelectorAll(".square");
+// document.addEventListener("DOMContentLoaded", function () {
+//   let allSquares = document.querySelectorAll(".square");
 
-  function changeColor(event) {
-    console.log(event);
-    event.target.classList.remove("chosenSquare");
-  }
-  allSquares.forEach((square) => {
-    square.addEventListener("click", changeColor);
-  });
+function changeColor(event) {
+  console.log(event);
+  event.target.classList.remove("chosenSquare");
+}
+allSquares.forEach((square) => {
+  square.addEventListener("click", changeColor);
 });
+// });
 
 // function addPoints(){
 //     if (changeColor === true){
@@ -149,8 +150,6 @@ document.addEventListener("DOMContentLoaded", function () {
 // }
 
 function addHammerClick() {
-  const hammer = document.getElementById("#hammer");
-
   hammer.addEventListener("click", () => {
     console.log("Hammer clicked");
     hitMole();
@@ -180,7 +179,12 @@ function initializeGame() {
   trackMouseMovement();
   addHammerClick();
 
-  document.addEventListener("DOMContentLoaded", function () {
-    initializeGame();
+  const allSquares = document.querySelectorAll(".square");
+  allSquares.forEach((square) => {
+    square.addEventListener("click", changeColor);
   });
+
+  // document.addEventListener("DOMContentLoaded", function () {
+  //   initializeGame();
+  // });
 }
