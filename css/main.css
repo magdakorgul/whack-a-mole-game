@@ -40,17 +40,16 @@ body {
 #score {
   font-weight: bold;
 }
-#timeRemaining {
-}
+
 #hammer {
+  position: absolute;
+  transform: translateX(-50%, -50%);
+
   width: 50px;
   height: 100px;
   background-color: grey;
   position: absolute;
   bottom: 0;
-  left: 50%;
-  transform: translateX(-50%, -50%);
-  cursor: pointer;
 }
 .red-color {
   background-color: red !important;

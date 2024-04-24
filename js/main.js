@@ -96,7 +96,7 @@ function StartTheTimer() {
     if (timeRemaining <= 0) {
       console.log("game over...");
       clearInterval(timerGame);
-      location.href = "gameover.html";
+      // location.href = "gameover.html";   <<<<< to unncomment later
     }
   }, 1000);
 }
@@ -106,7 +106,14 @@ StartTheTimer();
 // (function() {}
 //     document.onmousemove = handleMouseMove;
 //     function trackMouseMovement(event){
-//     const hammer = document.getElementById("#hammer");
+
+const hammer = document.getElementById("hammer");
+const onMouseMovement = (e) => {
+  hammer.style.left = e.pageX + "px";
+  hammer.style.top = e.pageY + "px";
+};
+document.addEventListener("mousemove", onMouseMovement);
+
 document.addEventListener("DOMContentLoaded", function () {
   let allSquares = document.querySelectorAll(".square");
 
