@@ -2,6 +2,7 @@ body {
   margin: 0;
   padding: 0;
   text-align: center;
+  color: rgb(72, 29, 5);
 }
 
 #board {
@@ -13,6 +14,9 @@ body {
   overflow: hidden;
 }
 #board-game {
+  border-radius: 10px;
+  margin-top: 60px;
+  margin-left: 20px;
   display: grid;
   background-color: rgb(255, 255, 255);
   grid-template-columns: 1fr 1fr 1fr;
@@ -34,26 +38,40 @@ body {
 .chosenSquare {
   background-image: url("../lemur.svg") !important;
   background-size: cover;
-  width: 160px;
+  width: 315px;
   max-height: 100%;
   object-fit: fill;
 }
+
+.timeRemaining {
+  font-size: 22px;
+  padding-top: 20px;
+}
+
 #score-container {
-  font-size: 20px;
+  font-size: 22px;
   margin: 20px;
 }
 #score {
   font-weight: bold;
 }
+.rectangle-game {
+  width: 20%;
+  background-color: rgba(255, 255, 255, 0.644);
+  float: right;
+  border-radius: 10px;
+  margin-top: 200px;
+  margin-right: 60px;
+}
 
-#hammer {
+/* #hammer {
   position: absolute;
   transform: translateX(-50%, -50%);
   width: 50px;
   height: 100px;
   background-color: grey;
   bottom: 0;
-}
+} */
 .red-color {
   background-color: red !important;
 }
@@ -73,10 +91,13 @@ h1 {
   text-align: center;
   margin-top: 110px;
   margin-bottom: 40px;
+  padding-top: 20px;
 }
 p {
   font-size: 26px;
   margin-bottom: 70px;
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 button {
@@ -84,15 +105,25 @@ button {
   background-color: #d8f2f1;
   color: rgb(90, 42, 15);
   border-radius: 5px;
-  width: 20%;
-  height: 8%;
+  width: 140px;
+  height: 60px;
   font-size: 20px;
   font-weight: bold;
   border-width: 2px;
   border-color: #f07d71;
+  margin-bottom: 20px;
 }
 button:hover {
   background-color: #f2b542;
   color: #528b82;
   cursor: pointer;
+}
+.rectangle {
+  width: 50%;
+  background-color: rgba(255, 255, 255, 0.52);
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 10px;
 }

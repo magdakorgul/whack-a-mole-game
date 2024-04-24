@@ -68,7 +68,7 @@ function generateRandom() {
 let timerId;
 
 function generateTime() {
-  timerId = setInterval(generateRandom, 3000);
+  timerId = setInterval(generateRandom, 700);
 }
 generateTime();
 
@@ -80,13 +80,13 @@ setTimeout(() => {
 // >>>>>> show the timer <<<<< //
 
 let timerGame;
-let timeRemaining = 40;
+let timeRemaining = 30;
 
 function updateTimer() {
-  const minutes = Math.floor(timeRemaining / 40)
+  const minutes = Math.floor(timeRemaining / 30)
     .toString()
     .padStart(2, "0");
-  const seconds = (timeRemaining % 40).toString().padStart(2, "0");
+  const seconds = (timeRemaining % 30).toString().padStart(2, "0");
   let timeRemainingElement = document.querySelector(".timeRemaining");
   timeRemainingElement.innerText = `${minutes}:${seconds}`;
 }
