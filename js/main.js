@@ -12,6 +12,7 @@ class Board {
     this.square.style.left = this.positionX + "vw";
   }
 }
+
 const boardGame = new Board();
 
 class Square {
@@ -45,7 +46,7 @@ const houses = new Square();
 
 document.addEventListener("DOMContentLoaded", function () {
   generateRandom();
-  initializeGame();
+  // initializeGame();
 });
 
 function generateRandom() {
@@ -123,36 +124,19 @@ let allSquares = document.querySelectorAll(".square");
 function changeColor(event) {
   console.log(event);
   event.target.classList.remove("chosenSquare");
+  hitMole();
 }
+
 allSquares.forEach((square) => {
   square.addEventListener("click", changeColor);
 });
-// });
 
-// function addPoints(){
-//     if (changeColor === true){
-//         updateScoreDisplay();
-//     }
-// } return addPoints();
-
-//     document.addEventListener("mousemove", (event) => {
-//         const xPosition = event.clientX;
-//         hammer.style.left = xPosition + "px";
-//     });
-// }
 let score = 0;
 
 function hitMole() {
   console.log("Mole hit");
   updateScore(1);
 }
-//     const chosenSquare = document.querySelector(".chosenSquare");
-
-//     if (chosenSquare){
-//         updateScore(1);
-//         chosenSquare.classList.remove("chosenSquare");
-//     }
-// }
 
 function addHammerClick() {
   hammer.addEventListener("click", () => {
@@ -183,12 +167,14 @@ function initializeGame() {
   trackMouseMovement();
   addHammerClick();
 
-  const allSquares = document.querySelectorAll(".square");
-  allSquares.forEach((square) => {
-    square.addEventListener("click", changeColor);
-  });
+  // const allSquares = document.querySelectorAll(".square");
+  // allSquares.forEach((square) => {
+  //   square.addEventListener("click", changeColor);
+  // });
 
   // document.addEventListener("DOMContentLoaded", function () {
   //   initializeGame();
   // });
 }
+
+//
