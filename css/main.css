@@ -31,7 +31,7 @@ body {
   max-height: 100%;
 } */
 .chosenSquare {
-  background-image: url("/hamster.png") !important;
+  background-image: url("../rat.svg") !important;
   background-size: cover;
   width: 160px;
   max-height: 100%;

@@ -107,16 +107,18 @@ function StartTheTimer() {
 StartTheTimer();
 
 // >>>> controling the hammer <<<< //
-
-const hammer = document.getElementById("hammer");
-const onMouseMovement = (e) => {
-  hammer.style.left = e.pageX + "px";
-  hammer.style.top = e.pageY + "px";
-};
-document.addEventListener("mousemove", onMouseMovement);
+function trackMouseMovement() {
+  const hammer = document.getElementById("hammer");
+  const onMouseMovement = (e) => {
+    hammer.style.left = e.pageX + "px";
+    hammer.style.top = e.pageY + "px";
+  };
+  document.addEventListener("mousemove", onMouseMovement);
+}
 
 // document.addEventListener("DOMContentLoaded", function () {
-//   let allSquares = document.querySelectorAll(".square");
+
+let allSquares = document.querySelectorAll(".square");
 
 function changeColor(event) {
   console.log(event);
@@ -138,9 +140,12 @@ allSquares.forEach((square) => {
 //         hammer.style.left = xPosition + "px";
 //     });
 // }
+let score = 0;
 
-// function hitMole(){
-//     console.log("Mole hit");
+function hitMole() {
+  console.log("Mole hit");
+  updateScore(1);
+}
 //     const chosenSquare = document.querySelector(".chosenSquare");
 
 //     if (chosenSquare){
@@ -158,7 +163,6 @@ function addHammerClick() {
 
 // >>>> counting scores <<<<< //
 
-let score = 0;
 function initializeScore() {
   score = 0;
   updateScoreDisplay();
