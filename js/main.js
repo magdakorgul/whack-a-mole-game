@@ -101,7 +101,7 @@ function StartTheTimer() {
     if (timeRemaining <= 0) {
       console.log("game over...");
       clearInterval(timerGame);
-      // location.href = "gameover.html";   <<<<< to unncomment later
+      location.href = "gameover.html";
     }
   }, 1000);
 }
@@ -138,12 +138,7 @@ function hitMole() {
   updateScore(1);
 }
 
-function addHammerClick() {
-  hammer.addEventListener("click", () => {
-    console.log("Hammer clicked");
-    hitMole();
-  });
-}
+// >>>>> scoring points only after clicking on chosenSquare - NOT DONE <<<<<<//
 
 // >>>> counting scores <<<<< //
 

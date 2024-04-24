@@ -7,7 +7,8 @@ body {
 #board {
   width: 100vw;
   height: 100vh;
-  background-color: rgb(184, 255, 196);
+  background-image: url("../5965778.jpg");
+  background-size: cover;
   position: relative;
   overflow: hidden;
 }
@@ -21,7 +22,7 @@ body {
     "image1 image1 image1";
 }
 .square {
-  background-color: rgb(203, 168, 255);
+  background-color: #ffddc1;
   margin: 5px;
   padding: 5px;
 }
@@ -31,11 +32,10 @@ body {
   max-height: 100%;
 } */
 .chosenSquare {
-  background-image: url("../rat.svg") !important;
+  background-image: url("../lemur.svg") !important;
   background-size: cover;
   width: 160px;
   max-height: 100%;
-  border: 1px solid black;
   object-fit: fill;
 }
 #score-container {
@@ -56,4 +56,43 @@ body {
 }
 .red-color {
   background-color: red !important;
+}
+
+/* page gameover */
+
+.page-gameover {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("../7719989.jpg");
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+h1 {
+  font-size: 70px;
+  text-align: center;
+  margin-top: 110px;
+  margin-bottom: 40px;
+}
+p {
+  font-size: 26px;
+  margin-bottom: 70px;
+}
+
+button {
+  position: relative;
+  background-color: #d8f2f1;
+  color: rgb(90, 42, 15);
+  border-radius: 5px;
+  width: 20%;
+  height: 8%;
+  font-size: 20px;
+  font-weight: bold;
+  border-width: 2px;
+  border-color: #f07d71;
+}
+button:hover {
+  background-color: #f2b542;
+  color: #528b82;
+  cursor: pointer;
 }
