@@ -3,6 +3,7 @@ body {
   padding: 0;
   text-align: center;
   color: rgb(72, 29, 5);
+  cursor: url("../pinch-small.png"), auto;
 }
 
 #board {
