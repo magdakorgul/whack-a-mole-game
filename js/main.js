@@ -173,15 +173,6 @@ function initializeGame() {
   initializeScore();
   trackMouseMovement();
   addHammerClick();
-
-  // const allSquares = document.querySelectorAll(".square");
-  // allSquares.forEach((square) => {
-  //   square.addEventListener("click", changeColor);
-  // });
-
-  // document.addEventListener("DOMContentLoaded", function () {
-  //   initializeGame();
-  // });
 }
 
 //
