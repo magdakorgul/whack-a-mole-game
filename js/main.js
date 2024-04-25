@@ -23,20 +23,6 @@ class Square {
     this.positionY = 20;
 
     this.squareElement = document.querySelectorAll(".square");
-
-    // for (let i=0; i<this.squareElement.length; i++){
-    //     let element = this.squareElement[i];
-    // element.style.width = this.width + "vw";
-    // element.style.height = this.height + "vh";
-    // element.style.bottom = this.positionY + "vh";
-    // element.style.left = this.positionX + "vw";
-
-    // let image = document.querySelector(".rat");
-    // image.style.width = "80px";
-    // image.style.maxHeight = "100%";
-    // image.style.position = "relative";
-
-    //  element.appendChild(image);
   }
 }
 
@@ -52,13 +38,22 @@ document.addEventListener("DOMContentLoaded", function () {
 function generateRandom() {
   let squares = document.querySelectorAll(".square");
   let chosenSquare = document.querySelector(".chosenSquare");
+  let gameOverSquare = document.querySelector(".gameOver");
 
   if (chosenSquare) {
     chosenSquare.classList.remove("chosenSquare");
   }
 
+  if (gameOverSquare) {
+    gameOverSquare.classList.remove("gameOver");
+  }
+
   let randomIndex = Math.floor(Math.random() * squares.length);
   squares[randomIndex].classList.add("chosenSquare");
+
+  if (Math.random() < 0.1) {
+    squares[randomIndex].classList.add("gameOver");
+  }
 
   console.log(squares[randomIndex]);
 }
@@ -68,7 +63,7 @@ function generateRandom() {
 let timerId;
 
 function generateTime() {
-  timerId = setInterval(generateRandom, 700);
+  timerId = setInterval(generateRandom, 900);
 }
 generateTime();
 
@@ -121,10 +116,27 @@ function trackMouseMovement() {
 
 let allSquares = document.querySelectorAll(".square");
 
+// if clicking on game over: //
+
 function changeColor(event) {
   console.log(event);
-  event.target.classList.remove("chosenSquare");
-  hitMole();
+  if (event.target.classList.contains("gameOver")) {
+    gameOver();
+  } else if (
+    event.target.classList.contains("square") &&
+    event.target.classList.contains("chosenSquare") !== true
+  ) {
+    updateScore === false;
+  } else {
+    event.target.classList.remove("chosenSquare");
+    hitMole();
+  }
+}
+
+function gameOver() {
+  console.log("game over");
+  clearInterval(timerGame);
+  location.href = "../html/gameover.html";
 }
 
 allSquares.forEach((square) => {

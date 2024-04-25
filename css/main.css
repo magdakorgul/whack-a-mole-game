@@ -19,7 +19,7 @@ body {
   margin-top: 60px;
   margin-left: 20px;
   display: grid;
-  background-color: rgb(255, 255, 255);
+  background-image: url("../3986323.jpg");
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
     "image1 image1 image1"
@@ -31,13 +31,16 @@ body {
   margin: 5px;
   padding: 5px;
 }
-/* img {
-  grid-area: image1;
-  width: 60px;
-  max-height: 100%;
-} */
+
 .chosenSquare {
   background-image: url("../lemur.svg");
+  background-size: cover;
+  width: 315px;
+  max-height: 100%;
+  object-fit: fill;
+}
+.gameOver {
+  background-image: url("../hedgehog.png");
   background-size: cover;
   width: 315px;
   max-height: 100%;
