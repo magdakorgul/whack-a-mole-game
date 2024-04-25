@@ -4,7 +4,7 @@ body {
   text-align: center;
   color: rgb(72, 29, 5);
   cursor: url("../pinch-small.png"), auto;
-  font-family: lato, Arial, Helvetica, sans-serif;
+  font-family: Nunito, Arial, Helvetica, sans-serif;
 }
 
 #board {
@@ -31,6 +31,10 @@ body {
   background-color: #ffddc1;
   margin: 5px;
   padding: 5px;
+  background-position-x: center;
+  background-position-y: 120px;
+  background-repeat: no-repeat;
+  transition: all 2s;
 }
 
 .chosenSquare {
@@ -39,6 +43,8 @@ body {
   width: 315px;
   max-height: 100%;
   object-fit: fill;
+
+  background-position-y: 0px;
 }
 .gameOver {
   background-image: url("../hedgehog.png");
@@ -100,7 +106,7 @@ h1 {
   text-transform: uppercase;
 }
 p {
-  font-size: 26px;
+  font-size: 24px;
   margin-bottom: 40px;
   padding-left: 10px;
   padding-right: 10px;
