@@ -101,7 +101,7 @@ function StartTheTimer() {
     if (timeRemaining <= 0) {
       console.log("game over...");
       clearInterval(timerGame);
-      location.href = "gameover.html";
+      location.href = "../html/gameover.html";
     }
   }, 1000);
 }
