@@ -32,7 +32,6 @@ const houses = new Square();
 
 document.addEventListener("DOMContentLoaded", function () {
   generateRandom();
-  // initializeGame();
 });
 
 function generateRandom() {
@@ -96,27 +95,15 @@ function StartTheTimer() {
     if (timeRemaining <= 0) {
       console.log("game over...");
       clearInterval(timerGame);
-      //location.href = "../html/gameover.html";
+      location.href = "../html/gameover.html";
     }
   }, 1000);
 }
 StartTheTimer();
 
-// >>>> controling the hammer <<<< //
-function trackMouseMovement() {
-  const hammer = document.getElementById("hammer");
-  const onMouseMovement = (e) => {
-    hammer.style.left = e.pageX + "px";
-    hammer.style.top = e.pageY + "px";
-  };
-  document.addEventListener("mousemove", onMouseMovement);
-}
-
-// document.addEventListener("DOMContentLoaded", function () {
-
 let allSquares = document.querySelectorAll(".square");
 
-// if clicking on game over: //
+//>>>>> if clicking on different types of squares: <<<<<<//
 
 function changeColor(event) {
   console.log(event);
@@ -132,6 +119,8 @@ function changeColor(event) {
     hitMole();
   }
 }
+
+//>>>>>> game over <<<<<< //
 
 function gameOver() {
   console.log("game over");
@@ -150,7 +139,7 @@ function hitMole() {
   updateScore(1);
 }
 
-// >>>>> scoring points only after clicking on chosenSquare - NOT DONE <<<<<<//
+// >>>>> scoring points only after clicking on chosenSquare <<<<<<//
 
 // >>>> counting scores <<<<< //
 
@@ -174,5 +163,3 @@ function initializeGame() {
   trackMouseMovement();
   addHammerClick();
 }
-
-//
