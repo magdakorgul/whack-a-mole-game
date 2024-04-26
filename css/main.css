@@ -3,14 +3,14 @@ body {
   padding: 0;
   text-align: center;
   color: rgb(72, 29, 5);
-  cursor: url("pinch-small.png"), auto;
+  cursor: url("/pinch-small.png"), auto;
   font-family: Nunito, Arial, Helvetica, sans-serif;
 }
 
 #board {
   width: 100vw;
   height: 100vh;
-  background-image: url("5965778.jpg");
+  background-image: url("/5965778.jpg");
   background-size: cover;
   position: relative;
   overflow: hidden;
@@ -20,7 +20,7 @@ body {
   margin-top: 60px;
   margin-left: 20px;
   display: grid;
-  background-image: url("3986323.jpg");
+  background-image: url("/3986323.jpg");
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-areas:
     "image1 image1 image1"
@@ -38,7 +38,7 @@ body {
 }
 
 .chosenSquare {
-  background-image: url("lemur.svg");
+  background-image: url("/lemur.svg");
   background-size: cover;
   width: 315px;
   max-height: 100%;
@@ -47,7 +47,7 @@ body {
   background-position-y: 0px;
 }
 .gameOver {
-  background-image: url("hedgehog.png");
+  background-image: url("/hedgehog.png");
   background-size: cover;
   width: 315px;
   max-height: 100%;
@@ -84,7 +84,7 @@ body {
 .page-gameover {
   width: 100vw;
   height: 100vh;
-  background-image: url("7719989.jpg");
+  background-image: url("/7719989.jpg");
   background-size: cover;
   position: relative;
   overflow: hidden;
