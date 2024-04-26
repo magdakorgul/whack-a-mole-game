@@ -125,7 +125,7 @@ function changeColor(event) {
 function gameOver() {
   console.log("game over");
   clearInterval(timerGame);
-  location.href = "../html/gameover.html";
+  location.href = "/html/gameover.html";
 }
 
 allSquares.forEach((square) => {
